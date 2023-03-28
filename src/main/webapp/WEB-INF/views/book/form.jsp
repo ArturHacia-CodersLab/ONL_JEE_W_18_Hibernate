@@ -16,6 +16,7 @@
     Tytuł: <form:input path="title"/><br>
     Ocena: <form:input path="rating" type="number"/><br>
     Opis: <form:textarea path="description"/><br>
+    Autorzy: <form:select path="authors" multiple="true" items="${authorsList}" itemValue="id" itemLabel="fullName"/><br>
     Wydawca: <form:select path="publisher.id">
         <form:option value="0" label="-- wybierz --"/>
         <form:options items="${publishers}" itemLabel="name" itemValue="id"/>

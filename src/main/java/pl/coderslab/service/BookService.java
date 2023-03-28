@@ -3,7 +3,9 @@ package pl.coderslab.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.coderslab.dao.BookDao;
+import pl.coderslab.model.Author;
 import pl.coderslab.model.Book;
+import pl.coderslab.model.Publisher;
 
 import javax.management.Query;
 import java.util.List;
@@ -19,6 +21,10 @@ public class BookService {
 
   public Book findById(long id) {
     return bookDao.findById(id);
+  }
+
+  public Book findWithAuthorById(long id) {
+    return bookDao.findWithAuthorById(id);
   }
 
   public void update(Book book) {
@@ -39,5 +45,17 @@ public class BookService {
 
   public List<Book> allWithRating(int rating) {
     return bookDao.allWithRating(rating);
+  }
+
+  public List<Book> getBookWithPublisher() {
+    return bookDao.getBookWithPublisher();
+  }
+
+  public List<Book> getBookWithPublisher(Publisher publisher) {
+    return bookDao.getBookWithPublisher(publisher);
+  }
+
+  public List<Book> getBookWithAuthor(Author author) {
+    return bookDao.getBookWithAuthor(author);
   }
 }
