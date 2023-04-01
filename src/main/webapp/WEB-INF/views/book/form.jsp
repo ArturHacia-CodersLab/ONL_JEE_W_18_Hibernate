@@ -14,13 +14,20 @@
 <body>
 <form:form method="post" modelAttribute="book">
     Tytuł: <form:input path="title"/><br>
+    <form:errors path="title"/><br>
     Ocena: <form:input path="rating" type="number"/><br>
+    <form:errors path="rating"/><br>
     Opis: <form:textarea path="description"/><br>
+    <form:errors path="description"/><br>
     Autorzy: <form:select path="authors" multiple="true" items="${authorsList}" itemValue="id" itemLabel="fullName"/><br>
-    Wydawca: <form:select path="publisher.id">
+    <form:errors path="authors"/><br>
+    Wydawca: <form:select path="publisher">
         <form:option value="0" label="-- wybierz --"/>
         <form:options items="${publishers}" itemLabel="name" itemValue="id"/>
     </form:select><br>
+    <form:errors path="publisher"/><br>
+    <form:input path="pages" type="number"/><br>
+    <form:errors path="pages"/><br>
     <input type="submit"/>
 </form:form>
 </body>

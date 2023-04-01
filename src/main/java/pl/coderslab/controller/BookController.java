@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pl.coderslab.model.Author;
 import pl.coderslab.model.Book;
+import pl.coderslab.model.Category;
 import pl.coderslab.model.Publisher;
 import pl.coderslab.service.AuthorService;
 import pl.coderslab.service.BookService;
@@ -114,5 +115,23 @@ public class BookController {
       return "Nie ma takiego autora";
     }
     return bookService.getBookWithAuthor(author).toString();
+  }
+
+  @RequestMapping("/title/{title}")
+  @ResponseBody
+  public String getBooksWithTitle(@PathVariable String title) {
+    return bookService.getBooksWithTitle(title).toString();
+  }
+
+  @RequestMapping("/category/{category}")
+  @ResponseBody
+  public String getBooksWithCategory(@PathVariable Category category) {
+    return bookService.getBookWithCategory(category).toString();
+  }
+
+  @RequestMapping("/categoryId/{id}")
+  @ResponseBody
+  public String getBooksWithCategoryId(@PathVariable Long id) {
+    return bookService.getBooksWithCategoryId(id).toString();
   }
 }

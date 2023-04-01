@@ -22,6 +22,7 @@ Lista książek<br><br>
         <td>Opis</td>
         <td>Wydawca</td>
         <td>Autorzy</td>
+        <td>Strony</td>
         <td></td>
     </tr>
     <c:forEach items="${books}" var="book">
@@ -32,6 +33,7 @@ Lista książek<br><br>
             <td>${book.description}</td>
             <td>${book.publisher.name}</td>
             <td>${book.authors}</td>
+            <td>${book.pages}</td>
             <td><a href="/book/form/edit/${book.id}">Edytuj</a> <a href="/book/form/confirm/${book.id}">Usuń</a></td>
         </tr>
     </c:forEach>
