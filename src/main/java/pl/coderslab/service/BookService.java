@@ -65,21 +65,24 @@ public class BookService {
 
   @Transactional
   public List<Book> getBooksWithTitle(String title) {
-    List<Book> books = bookRepository.readBooksByTitle(title);
+//    List<Book> books = bookRepository.readBooksByTitle(title);
+    List<Book> books = bookRepository.findBooksByTitle(title);
     getAuthorsToBookList(books);
     return books;
   }
 
   @Transactional
   public List<Book> getBookWithCategory(Category category) {
-    List<Book> books = bookRepository.readBooksByCategory(category);
+//    List<Book> books = bookRepository.readBooksByCategory(category);
+    List<Book> books = bookRepository.findBooksByCategory(category);
     getAuthorsToBookList(books);
     return books;
   }
 
   @Transactional
   public List<Book> getBooksWithCategoryId(Long id) {
-    List<Book> books = bookRepository.readBooksByCategoryId(id);
+//    List<Book> books = bookRepository.readBooksByCategoryId(id);
+    List<Book> books = bookRepository.finddBooksByCategoryId(id);
     getAuthorsToBookList(books);
     return books;
   }
